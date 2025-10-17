@@ -1,0 +1,38 @@
+# Doxyfile for GPI Sandbox
+
+PROJECT_NAME           = "GPI Sandbox"
+PROJECT_NUMBER         = @GPI_VERSION@
+PROJECT_BRIEF          = "A Modular Game Platform Host in Modern C++"
+
+OUTPUT_DIRECTORY       = @DOXYGEN_OUTPUT_DIR@
+CREATE_SUBDIRS         = NO
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+INPUT                  = include/gpi src
+FILE_PATTERNS          = *.h *.hpp *.cpp
+RECURSIVE              = YES
+
+EXCLUDE_PATTERNS       = */thirdparty/* */out/* */build/* */external/*
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+
+GENERATE_LATEX         = NO
+
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+
+CLASS_DIAGRAMS         = YES
+HAVE_DOT               = YES
+UML_LOOK               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+

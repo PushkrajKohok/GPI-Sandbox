@@ -1,0 +1,7 @@
+{
+  "name": "Snake",
+  "version": "1.0.0",
+  "summary": "Classic snake game with grid-based movement.",
+  "author": "GPI Sandbox",
+  "icon": "snake.png"
+}

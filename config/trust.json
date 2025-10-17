@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "trusted_signers": [
+    {
+      "name": "GPI Official",
+      "fingerprint": "SHA256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "comment": "Official GPI plugin signing key"
+    }
+  ],
+  "policy": {
+    "allow_unsigned": true,
+    "require_verification": false,
+    "warn_on_unsigned": true
+  }
+}
+

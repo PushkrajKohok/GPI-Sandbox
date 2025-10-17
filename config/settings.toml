@@ -1,0 +1,14 @@
+[runtime]
+plugins_dir = "./plugins/bin"
+deadline_ms = 12
+stall_ms    = 150
+last_plugin = "Snake"
+isolation   = false
+
+[ui]
+hud = false
+show_store = true
+
+[replay]
+last_record = ""
+last_replay = ""

@@ -1,0 +1,7 @@
+{
+  "name": "Template",
+  "version": "1.0.0",
+  "summary": "Minimal plugin template with basic logging and telemetry.",
+  "author": "GPI Sandbox",
+  "icon": "template.png"
+}

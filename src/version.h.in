@@ -1,0 +1,2 @@
+#pragma once
+#define GPI_VERSION_STR "@GPI_VERSION@"

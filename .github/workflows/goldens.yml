@@ -1,0 +1,27 @@
+name: Goldens
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aminya/setup-cpp@v1
+        with: { cmake: true, ninja: true }
+      - run: cmake --preset release
+      - run: cmake --build --preset release
+      - name: Verify Pong golden
+        shell: bash
+        run: |
+          case "${{ runner.os }}" in
+            Windows) BIN="out/release/gpi_host.exe" ;;
+            *)       BIN="out/release/gpi_host" ;;
+          esac
+          $BIN --golden-verify testdata/goldens/pong_smoke

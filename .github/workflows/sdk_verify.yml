@@ -1,0 +1,63 @@
+name: SDK Verification
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  release:
+    types: [ published ]
+
+jobs:
+  verify-sdk:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: aminya/setup-cpp@v1
+        with:
+          cmake: true
+          ninja: true
+      
+      - name: Build SDK
+        shell: bash
+        run: |
+          case "${{ runner.os }}" in
+            Linux|macOS) bash scripts/make_sdk.sh ;;
+            Windows) powershell -File scripts/make_sdk.ps1 ;;
+          esac
+      
+      - name: Extract SDK
+        shell: bash
+        run: |
+          case "${{ runner.os }}" in
+            Windows) unzip gpi-sdk-*.zip -d sdk-test ;;
+            *) tar -xzf gpi-sdk-*.tar.gz -C . && mv sdk sdk-test ;;
+          esac
+      
+      - name: Build example plugin from SDK
+        shell: bash
+        run: |
+          cd sdk-test
+          mkdir build && cd build
+          cmake ..
+          cmake --build .
+      
+      - name: Verify plugin artifact
+        shell: bash
+        run: |
+          case "${{ runner.os }}" in
+            Windows) test -f sdk-test/build/plugins/gpi_plugin_example.dll ;;
+            macOS) test -f sdk-test/build/plugins/libgpi_plugin_example.dylib ;;
+            Linux) test -f sdk-test/build/plugins/libgpi_plugin_example.so ;;
+          esac
+      
+      - name: Upload SDK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gpi-sdk-${{ runner.os }}
+          path: gpi-sdk-*.*
+

@@ -1,0 +1,7 @@
+{
+  "name": "Pong",
+  "version": "1.0.0",
+  "summary": "Simple paddle-and-ball demo using draw_rects.",
+  "author": "GPI Sandbox",
+  "icon": "pong.png"
+}

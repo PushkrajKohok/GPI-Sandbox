@@ -1,0 +1,6 @@
+{
+  "check_frames": [120, 240],
+  "frame_tolerance": { "rmse": 6.0, "px_pct": 0.40 },
+  "size": { "w": 1280, "h": 720 },
+  "plugin_hint": "pong"
+}

@@ -1,0 +1,20 @@
+name: Sanitizers (quick)
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  asan-ubsan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aminya/setup-cpp@v1
+        with: { cmake: true, ninja: true, gcc: true }
+      - name: Configure (ASan+UBSan)
+        run: cmake -S . -B out/asan -G Ninja -DGPI_WITH_ASAN=ON -DGPI_WITH_UBSAN=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - name: Build
+        run: cmake --build out/asan --parallel
+      - name: Headless smoke
+        run: ./out/asan/gpi_host --headless --frames 300 --plugin pong

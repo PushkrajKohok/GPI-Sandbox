@@ -1,0 +1,11 @@
+{
+  "app_version": "1.0.0",
+  "os": "macOS",
+  "plugin": "",
+  "target_fps": 60,
+  "avg_ms": 70.0694,
+  "p95_ms": 24.1434,
+  "p99_ms": 24.1434,
+  "dropped_pct": 40,
+  "total_frames": 5
+}

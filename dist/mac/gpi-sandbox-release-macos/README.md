@@ -1,32 +1,6 @@
 # GPI Sandbox — A Modular Game Platform Host in Modern C++
 
-A **native desktop app** (Mac/Windows/Linux) that runs a **plugin-based mini-app/game platform**. The host discovers, loads, and hot-swaps C++ game plugins at runtime while maintaining **smooth 60 FPS**, **crash isolation**, and **telemetry**. It demonstrates **interface design, real-time rendering, multithreading, and shipping discipline**—the same concerns you'd face in an in-car UI.
-
-## 🎮 Current Status: WORKING!
-
-**✅ Phase 17 Complete** - The GPI Sandbox is now fully functional with:
-- **Working plugin system** - Pong and Snake games load and run successfully
-- **Plugin Store UI** - Browse and load plugins with one click
-- **Performance monitoring** - Real-time FPS and frame time metrics
-- **Hot-swapping** - Switch between games without restarting
-- **Crash isolation** - Plugins run safely in-process (isolation mode available)
-- **Complete documentation** - README, architecture docs, and SDK
-- **CI/CD ready** - GitHub Actions, packaging scripts, and release automation
-
-**🎯 Ready to play!** Launch the app and enjoy the games!
-
-### Quick Start (30 seconds)
-```bash
-# Build and run
-cmake --preset release
-cmake --build --preset release
-./out/release/gpi_host
-
-# In the app:
-# 1. Click "Pong" or "Snake" in the Plugin Store
-# 2. Click "Load Plugin" button
-# 3. Play! (Pong: arrow keys, Snake: WASD/arrows)
-```
+A **native desktop app** (Mac/Windows/Linux) that runs a **plugin-based mini-app/game platform**. The host discovers, loads, and hot-swaps C++ game plugins at runtime while maintaining **smooth 60 FPS**, **crash isolation**, and **telemetry**. It demonstrates **interface design, real-time rendering, multithreading, and shipping discipline**—the same concerns you’d face in an in-car UI.
 
 ---
 

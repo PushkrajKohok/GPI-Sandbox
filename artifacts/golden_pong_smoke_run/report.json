@@ -1,0 +1,8 @@
+{
+  "summary": { "pass": true, "frames": 2 },
+  "frames": [
+    { "idx": 120, "rmse": 2.1, "pct_over": 0.02 },
+    { "idx": 240, "rmse": 2.3, "pct_over": 0.03 }
+  ],
+  "thresholds": { "rmse": 6, "px_pct": 0.4 }
+}

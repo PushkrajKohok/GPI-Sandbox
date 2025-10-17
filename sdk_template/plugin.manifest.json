@@ -1,0 +1,10 @@
+{
+  "id": "com.example.bouncing_circle",
+  "name": "Bouncing Circle",
+  "version": "1.0.0",
+  "author": "Example Author",
+  "description": "A simple bouncing circle demo",
+  "lib_path": "libgpi_plugin_example.dylib",
+  "tags": ["demo", "graphics"],
+  "min_host_version": "1.0.0"
+}
