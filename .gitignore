@@ -5,6 +5,12 @@
 /CMakeCache.txt
 /*.user
 
+# runtime artifacts (generated on each run)
+artifacts/telemetry.csv
+artifacts/telemetry.json
+artifacts/session-*.csv
+artifacts/session-*.json
+
 # OS
 .DS_Store
 Thumbs.db

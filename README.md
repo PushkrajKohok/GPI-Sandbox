@@ -4,7 +4,7 @@ A **native desktop app** (Mac/Windows/Linux) that runs a **plugin-based mini-app
 
 ## 🎮 Current Status: WORKING!
 
-**✅ Phase 17 Complete** - The GPI Sandbox is now fully functional with:
+- **Phase 17 Complete** - The GPI Sandbox is now fully functional with:
 - **Working plugin system** - Pong and Snake games load and run successfully
 - **Plugin Store UI** - Browse and load plugins with one click
 - **Performance monitoring** - Real-time FPS and frame time metrics
